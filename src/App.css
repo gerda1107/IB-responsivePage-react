@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
+body {
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* GENERAL */
+
+.d-flex {
+    display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.jc-center {
+    justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.jc-space-evenly {
+    justify-content: space-evenly;
+}
+
+.jc-space-between {
+    justify-content: space-between;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+
+/* NAVBAR */
+
+nav {
+    background-color: #1b1c1c;
+    height: 60px;
+    padding: 20px;
+    font-size: 17px;
+}
+
+.navbar {
+    width: 80%;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: rgb(153, 149, 149);
+    transition: 0.5s;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 35px;
+    color: white;
+    font-family: 'Newsreader', serif;
+}
+
+.title i {
+    margin-right: 8px;
+    font-size: 50px;
+}
+
+.options {
+  width: 40%;
+}
+
+.hidden-menu {
   color: white;
+  font-size: 30px;
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 600px) {
+  .options {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .hidden-menu {
+    display: inline-block;
   }
 }
