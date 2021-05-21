@@ -25,6 +25,10 @@ body {
     align-items: center;
 }
 
+.dir-column {
+  flex-direction: column;
+}
+
 
 /* NAVBAR */
 
@@ -44,9 +48,10 @@ nav {
     text-decoration: none;
 }
 
-.navbar a:hover {
+.navbar a:hover, .hidden-menu i:hover {
     color: rgb(153, 149, 149);
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .title {
@@ -70,6 +75,20 @@ nav {
   font-size: 30px;
   display: none;
 }
+
+#hidden-menu-options {
+    width: 100%;
+    height: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 100px;
+    left: 0;
+    overflow-y: hidden;
+    background-color: rgb(65, 63, 63);
+    transition: 0.5s;
+}
+
+/* SMALL SCREEN */
 
 @media screen and (max-width: 600px) {
   .options {
