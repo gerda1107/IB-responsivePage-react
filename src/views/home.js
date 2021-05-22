@@ -1,27 +1,24 @@
 import Nav from '../components/nav';
 import Slider from '../components/slider';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function Home() {
 
-    const [getNavIcon, setNavIcon] = useState("fas fa-bars");
-    const [getNavOpen, setNavOpen] = useState(false);
+    const [getNavIcon, setNavIcon] = useState({ class: "fas fa-bars", trigger: false });
 
     const showNav = () => {
-        if (!getNavOpen) {
+        if (!getNavIcon.trigger) {
             document.getElementById("hidden-menu-options").style.height = "250px";
-            setNavIcon("fas fa-times");
-            setNavOpen(true);
+            setNavIcon({class: "fas fa-times", trigger: true});
         } else {
             document.getElementById("hidden-menu-options").style.height = "0px";
-            setNavIcon("fas fa-bars");
-            setNavOpen(false);
+            setNavIcon({class: "fas fa-bars", trigger: false});
         }
     }
 
     return (
         <div>
-            <Nav showNav={showNav} navIconClass={getNavIcon}/>
+            <Nav showNav={showNav} navIconClass={getNavIcon.class} />
             <Slider/>
         </div>
     )
