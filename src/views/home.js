@@ -1,5 +1,7 @@
 import Nav from '../components/nav';
+import Footer from '../components/footer';
 import Slider from '../components/slider';
+import Products from '../components/products';
 import React, { useState } from 'react';
 
 function Home() {
@@ -20,6 +22,8 @@ function Home() {
         <div>
             <Nav showNav={showNav} navIconClass={getNavIcon.class} />
             <Slider/>
+            <Products />
+            <Footer/>
         </div>
     )
 }
