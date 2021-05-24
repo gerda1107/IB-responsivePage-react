@@ -5,6 +5,8 @@ function Faq() {
 
     const [faqData, setFaqData] = useState(FaqData);
 
+    // open selected FAQ
+    // if one FAQ is open the other closes automatically
     const toggleFaq = (index) => {
         setFaqData(faqData.map((faq, i) => {
             if (i === index) {

@@ -1,40 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import SmallscreenProducts from './smallscreenProducts'
 import WidescreenProducts from './widescreenProducts'
-import Axios from 'axios'
 
-function Products() {
+function Products({productsArr}) {
 
-    const [productsArr, setproductsArr] = useState([]);
     const [windowWidth, setwindowWidth] = useState(window.innerWidth);
-
     const [loadMore, setLoadMore] = useState(4);
 
-    
+    //track window width changes
+    //clean up event listener when component is unmounted
     useEffect(() => {
-            getProducts();
-            window.addEventListener('resize', handleResize);
-            return () => {
-                window.removeEventListener('resize', handleResize)
-            }
-        }, [])
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize)
+    }}, [])
 
+    //Set window width every time window width changes
     const handleResize = () => {
         setwindowWidth(window.innerWidth);
     }
 
-    const getProducts = () => {
-        Axios.get('https://api.jsonbin.io/b/60a916bae2fa0d4db8abd1d5')
-            .then(res => {
-                setproductsArr(res.data);
-        })
-    }
-
+    //load more products when inquired
     const loadMoreProducts = () => {
         setLoadMore(loadMore + 4);
     }
 
-
+    //load restricted amount of products depending on window width
     const productsAmount = (screenSize) => {
         if (screenSize > 600) {
             return <WidescreenProducts
