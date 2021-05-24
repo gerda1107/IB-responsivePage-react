@@ -12,7 +12,7 @@ function Nav({showNav, navIconClass}) {
 
                     <div className="options d-flex jc-space-evenly">
                         <Link to="/">HOME</Link>
-                        <Link to="/">SHOP</Link>
+                        <Link to="/shop">SHOP</Link>
                         <Link to="/">REVIEWS</Link>
                         <Link to="/">BLOG</Link>
                     </div>
@@ -21,7 +21,7 @@ function Nav({showNav, navIconClass}) {
                         <div><i className={navIconClass} onClick={showNav}></i></div>
                         <div className="d-flex dir-column jc-space-evenly ai-center" id="hidden-menu-options">
                             <Link to="/">HOME</Link>
-                            <Link to="/">SHOP</Link>
+                            <Link to="/shop">SHOP</Link>
                             <Link to="/">REVIEWS</Link>
                             <Link to="/">BLOG</Link>
                         </div>

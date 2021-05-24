@@ -6,6 +6,7 @@ function Slider() {
     const [getCurrentSlide, setCurrentSlide] = useState(0);
     const [getDotActiveStatus, setDotActiveStatus] = useState(0);
 
+    //Change slide when dot is clicked
     const changeSlide = (n) => {
         setCurrentSlide(n);
         setDotActiveStatus(n);
